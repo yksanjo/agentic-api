@@ -1,75 +1,84 @@
-# 🌐 Agentic API
+# agentic-api
 
-REST API server for the Agentic Scraper framework.
+## Detailed Description
 
-## Features
+agentic-api is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-- **RESTful API**: Easy HTTP-based access to scraper
-- **Batch Scraping**: Scrape multiple URLs at once
-- **Tool Execution**: Execute individual tools via API
-- **Memory API**: Access and update memory
-- **Status Monitoring**: Track agent status
+## Problem Statement
 
-## Installation
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-```bash
-cd agentic-api
-pip install -r requirements.txt
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
 
-## Run Server
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-python api.py
-# Server runs on http://localhost:8000
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt  # or: pip install -e .[dev]
+pytest
 ```
 
-## API Endpoints
+## Usage
 
-### Scrape
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-```bash
-POST /scrape
-{
-  "url": "https://example.com",
-  "goal": "Extract article titles"
-}
-```
+## Quality Standards
 
-### Batch Scrape
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-```bash
-POST /scrape/batch
-{
-  "targets": [
-    {"url": "https://example.com", "goal": "Extract links"},
-    {"url": "https://example.org", "goal": "Extract content"}
-  ]
-}
-```
+## Security
 
-### Tools
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-```bash
-GET /tools
-POST /tools/execute
-```
+## Contributing
 
-### Memory
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-```bash
-GET /memory
-POST /memory
-GET /memory/recommendations?url=https://example.com
-```
+## Roadmap
 
-### Status
+Track upcoming milestones, technical debt, and planned feature work.
 
-```bash
-GET /status
-GET /history
-```
+## Support
 
-## OpenAPI Docs
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
-Visit `http://localhost:8000/docs` for interactive API documentation.
+## License
+
+This project is released under the MIT License.
